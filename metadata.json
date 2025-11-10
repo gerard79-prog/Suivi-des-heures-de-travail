@@ -1,0 +1,5 @@
+{
+  "name": "Suivi des Heures de Travail",
+  "description": "Une application web pour suivre les heures de travail par entreprise, avec des fonctionnalités de filtrage, de résumé et d'exportation PDF. Les données sont synchronisées avec Supabase.",
+  "requestFramePermissions": []
+}
