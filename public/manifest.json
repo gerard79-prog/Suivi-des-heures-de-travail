@@ -1,1 +1,15 @@
-full contents of public/manifest.json
+{
+  "short_name": "Time Tracker",
+  "name": "Suivi des Heures de Travail",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#111827",
+  "background_color": "#f8fafc"
+}
