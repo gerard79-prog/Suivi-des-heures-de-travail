@@ -1,34 +1,26 @@
+
 <!DOCTYPE html>
-<html lang="fr" class="h-full">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Heures de Travail</title>
     
-    <!-- PWA & SEO -->
-    <title>Suivi des Heures</title>
-    <meta name="description" content="Application de suivi des heures de travail simple et efficace.">
+    <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#4f46e5">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    
-    <!-- Styles -->
+
+    <!-- Tailwind CSS & PDF Library -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              // Vous pouvez personnaliser les couleurs ici si vous le souhaitez
-            }
-          }
-        }
       }
     </script>
-    
-    <!-- Librairies externes -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    
+
+    <!-- App Entry Point -->
+    <script type="module" src="/index.tsx"></script>
 <script type="importmap">
 {
   "imports": {
@@ -39,24 +31,22 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body class="h-full bg-slate-100 dark:bg-slate-900">
-    <div id="root" class="h-full"></div>
-    
-    <!-- Script principal de l'application -->
-    <script type="module" src="/index.tsx"></script>
+<body class="bg-slate-100 dark:bg-slate-900">
+    <div id="root"></div>
 
-    <!-- Service Worker pour le mode hors-ligne (PWA) -->
+    <!-- Service Worker Registration -->
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').then(registration => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, err => {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-        });
-      }
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 </body>
 </html>

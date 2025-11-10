@@ -1,15 +1,17 @@
+
 {
-  "short_name": "Time Tracker",
   "name": "Suivi des Heures de Travail",
+  "short_name": "Time Tracker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#4f46e5",
+  "description": "Une application PWA pour le suivi des heures de travail avec React, TypeScript et Supabase.",
   "icons": [
     {
       "src": "/icon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any"
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#111827",
-  "background_color": "#f8fafc"
+  ]
 }
