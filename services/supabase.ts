@@ -1,12 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 import { WorkEntry, Company } from '../types';
 
-const supabaseUrl = process.env.PARCEL_SUPABASE_URL;
-const supabaseKey = process.env.PARCEL_SUPABASE_ANON_KEY;
+// Utiliser import.meta.env pour Vite
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-    // In a real app, you might want to show this to the user in a more friendly way
-    throw new Error("Supabase URL and Key must be provided in .env file. They must start with PARCEL_");
+    throw new Error("Supabase URL and Key must be provided in .env file. Use VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY");
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);
